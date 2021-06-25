@@ -15,7 +15,7 @@ export function ensureAuthenticate(request: Request, response: Response, next: N
   const [, token] = authToken.split(" ");
 
   try {
-    const { sub } = verify(token, "6e4b847a5630b2b719cf707f3b9ed271") as IPayLoad;
+    const { sub } = verify(token, process.env.SECRET_API) as IPayLoad;
     request.user_id = sub;
     return next();
   } catch (error) {
