@@ -1,6 +1,6 @@
-{
+module.exports = {
   "type": "sqlite",
-  "database": "src/database/database.sqlite",
+  "database": process.env.DATABASE,
   "migrations": ["src/database/migrations/*.ts"],
   "entities": ["src/entities/*.ts"],
   "cli": {
